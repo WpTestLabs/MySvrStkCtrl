@@ -1,5 +1,5 @@
 # $Srv/env/cfSrvRootFSH.sh  20180817
-if [[ ! -z "$1" ]]; then export Srv=$1 ; fi
+# if [[ ! -z "$1" ]]; then export Srv=$1 ; fi << this file is sourced so can't OWN $1
 if [[ -z "$Srv" ]]; then export Srv=/srv ; fi
 
 export  SrvBin=$Srv/bin
