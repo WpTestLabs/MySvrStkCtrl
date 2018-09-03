@@ -20,8 +20,9 @@ export      WwwSsl=$WwwEtc/letsencrypt/live
 export      WwwLcl=$SrvWww/lcl
 export      WwwLclAZ=$SrvWww/lclAZ
 export      WwwLib=$SrvWww/lib
-export        WwwLibWP=$WwwLib/WP
-export        WwwLibWpPI=$WwwLibWP/PI
+export      WpWwwLib=$WwwLib/WP
+export        WwwLibWP=$WpWwwLib        # Deprecated @@@@ but still in WpRepoLib.sh
+export        WwwLibWpPI=$WpWwwLib/PI   #   "  ==> WpWwwLib/{core,plugins,themes,__}
 export    WwwPrfl=$SrvWww/Prfl
 export    WwwSwcAZ=$SrvWww/swcAZ
 export    WwwDflt=$SrvWww/default
