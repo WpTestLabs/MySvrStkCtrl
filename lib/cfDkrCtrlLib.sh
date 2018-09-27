@@ -42,6 +42,7 @@ _Run () {  # See On() which adds chk: Already running?? (Paused? Stopped?)
 	cmd=$(_pDkrRunD)
 	export S=`$cmd` R=$?;    			echo -e "result>>$S\nExit Code: $R"
 	if [[ $R -eq 0 ]];  then			echo " -- Success - CID: $S"
+		pCfRunLnk $S > $KnBasHP/$KnPkgN
 		pCfRunLnk $S > $RunFQHPFN;		cat $RunFQHPFN
     else		echo " -- Error Code: $R"
 	fi
