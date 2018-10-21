@@ -14,6 +14,7 @@ export  SrvLog=$Srv/log
 export  SrvRepo=$Srv/Repo
 export    WpRepo=$SrvRepo/WP
 export  SrvReq=$SrvLib/req
+export  SrvWkFlo=$Srv/WkFlo
 export  SrvWww=$Srv/www
 export    WwwCDN=$SrvWww/CDN
 export    WwwEtc=$SrvWww/etc
