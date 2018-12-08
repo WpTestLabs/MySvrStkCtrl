@@ -20,13 +20,12 @@ cat <<EOF
 	echo "Start: $RunFQHPFN"
 # This file: $RunFQHPFN
 export CID=$1
-
 . $ThisKnCtrlHPFN \$@
 EOF
 } #----
-probe () {  local pfn=$1;  #### @@@@@ $1 ***UNTESTED***
-	if [[ -z "$pfn" ]]; then  	local ts=`date +%y%m%d-%H%M`;  			echo "ts: $ts"
-		local tp="Export_${ts}_XXX" ;						echo "tp: $tp"
+QQQXXprobe () {  local pfn=$1;  #### @@@@@ $1 ***UNTESTED***
+	if [[ -z "$pfn" ]]; then  	local ts=`date +%y%m%d-%H%M`;  	echo "ts: $ts"
+		local tp="Export_${ts}_XXX" ;				echo "tp: $tp"
 		pfn=/tmp/`mktemp -d $tp` 
 	fi
 	docker run -it --rm -v $pfn:/Export $DkrRtImgN ${1-/bin/sh}; 
@@ -40,8 +39,8 @@ EOF
 _Run () {  # See On() which adds chk: Already running?? (Paused? Stopped?)
 	mkdir -p $RunHP;					_pDkrRunD
 	cmd=$(_pDkrRunD)
-	export S=`$cmd` R=$?;    			echo -e "result>>$S\nExit Code: $R"
-	if [[ $R -eq 0 ]];  then			echo " -- Success - CID: $S"
+	export S=`$cmd` R=$?;    		echo -e "result>>$S\nExit Code: $R"
+	if [[ $R -eq 0 ]];  then		echo " -- Success - CID: $S"
 	  #	pCfRunLnk $S > $KnBasHP/$KnPkgN
 		echo "export KnCID=$S" > $KnBasHP/.KnCID.env
 		pCfRunLnk $S > $RunFQHPFN;		cat $RunFQHPFN
