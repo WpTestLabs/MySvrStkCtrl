@@ -7,6 +7,8 @@ export WpPiDlUrl=https://downloads.wordpress.org/plugin
 .  $Srv/env/cfSrvRootFSH.env
 
 lsc () { ls --color=auto $@; }
+TL () { echo "$@"; }
+export -f lsc TL
 
 command_not_found_handle () { echo "myEnv.sh >> cmd not found >>>>> $1"; 
     echo "myEnv.sh - \$SsRunHP >> $SsRunHP"
@@ -18,4 +20,4 @@ command_not_found_handle () { echo "myEnv.sh >> cmd not found >>>>> $1";
     echo "*** END command_not_found_handle() ****"
 }
 #env
-if [[ -z "$1" ]]; then /bin/sh; else $@; fi
+if [[ -z "$1" ]]; then /bin/bash; else $@; fi
