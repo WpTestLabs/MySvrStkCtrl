@@ -8,5 +8,5 @@ else  	echo "** Used Relative Path: $0 -- Must use Fully Qualified Path **";  	e
 fi
 export Srv=`dirname $0` ;	  echo "export Srv= >> $Srv >>   `dirname $0`"
 env -i LS_COLORS=$LS_COLORS  PATH=$Srv/bin:$PATH  PWD=$PWD Srv=$Srv  TERM=xterm \
-    GoDevPth=$GoDevPth \
+    GoBinPth=$GoBinPth \
   $Srv/myEnv.sh $@
